@@ -1,0 +1,6 @@
+&projwfc
+						prefix = 'AlN'
+						ngauss=0, degauss=0.016748
+						DeltaE = 0.030000
+						kresolveddos=.true.
+/

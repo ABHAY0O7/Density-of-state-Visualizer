@@ -1,0 +1,60 @@
+&CONTROL
+                                        wf_collect = .true.
+                                       calculation = 'bands'
+                                         verbosity = 'high'
+                                        pseudo_dir = '/scratch/pyadav/AlN_aqua/bukled_dft/work_dir/pseudo'
+                                     forc_conv_thr = 1e-05
+                                            prefix = 'AlN'
+                                     etot_conv_thr = 1e-05
+/&end
+
+&SYSTEM
+                                           ecutwfc = 70
+                                       occupations = 'fixed'
+                                         celldm(1) = 5.922
+                                             ibrav = 0
+                                         celldm(3) = 7
+                                               nat = 2
+                                              ntyp = 2
+                                              nbnd = 100
+                                          noncolin = .TRUE.
+                                          lspinorb = .TRUE.
+                                  force_symmorphic = .TRUE.
+/&end
+/
+
+&ELECTRONS
+                                   diagonalization = 'david'
+                                          conv_thr = 1e-10
+                                  electron_maxstep = 200
+/&end
+/
+
+&ions
+                                      ion_dynamics = 'bfgs'
+/&end
+&cell
+                                      cell_dofree = '2Dxy'
+                                     cell_dynamics = 'bfgs'
+/&end
+
+
+ATOMIC_SPECIES
+Al 26.9815         Al.upf
+N  14.0067         N.upf
+
+CELL_PARAMETERS (alat=  5.92200000)
+   0.997296690  -0.000000000   0.000000000
+  -0.498648345   0.863684268   0.000000000
+   0.000000000   0.000000000   7.000000000
+
+ATOMIC_POSITIONS (crystal)
+Al            0.6666667000        0.3333333000        0.0349529245
+N            -0.6666667000       -0.3333333000        0.0349517755
+K_POINTS {crystal_b}
+4
+0.00000  0.00000  0.00000 50
+0.50000  0.00000  0.00000 50
+0.33333  0.33333  0.00000 50
+0.00000  0.00000  0.00000 50
+
